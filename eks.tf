@@ -2,6 +2,7 @@
 resource "aws_eks_cluster" "eks" {
   name     = "${var.project_name}_k8s_cluster"
   role_arn = aws_iam_role.eks_cluster_role.arn
+  version  = var.k8s_version
 
   vpc_config {
     endpoint_private_access = true
